@@ -1,0 +1,63 @@
+SQL  PROJECT 
+
+Student Information Management
+
+Add a new student to the database:
+SQL
+INSERT INTO students (student_id, name, date_of_birth, address, contact_number)
+VALUES (1, 'John Doe', '1995-07-15', '123 Main Street', '555-1234');
+Use code with caution. Learn more
+Retrieve student information:
+SQL
+SELECT * FROM students WHERE student_id = 1;
+Use code with caution. Learn more
+Course Management
+
+Add a new course to the database:
+SQL
+INSERT INTO courses (course_id, name, description, credits)
+VALUES (101, 'Mathematics, Introduction to Calculus', 'A course that introduces the basic concepts of calculus.', 3);
+Use code with caution. Learn more
+Retrieve course information:
+SQL
+SELECT * FROM courses WHERE course_id = 101;
+Use code with caution. Learn more
+Grade Management
+
+Record a student's grade for a specific course:
+SQL
+INSERT INTO grades (student_id, course_id, grade)
+VALUES (1, 101, 85.5);
+Use code with caution. Learn more
+Update a student's grade for a course:
+SQL
+UPDATE grades SET grade = 90.0 WHERE student_id = 1 AND course_id = 101;
+Use code with caution. Learn more
+Enrollment Management
+
+Enroll a student in a course:
+SQL
+INSERT INTO enrollments (student_id, course_id, enrollment_date)
+VALUES (1, 101, '2023-01-01');
+Use code with caution. Learn more
+Retrieve enrolled courses for a student:
+SQL
+SELECT courses.* FROM courses
+JOIN enrollments ON courses.course_id = enrollments.course_id WHERE enrollments.student_id = 1;
+Use code with caution. Learn more
+Reporting
+
+Calculate average grade for a student:
+SQL
+SELECT AVG(grade) FROM grades WHERE student_id = 1;
+Use code with caution. Learn more
+Display top-performing students:
+SQL
+SELECT students.name, AVG(grades.grade) AS average_grade
+FROM students
+JOIN grades ON students.student_id = grades.student_id
+GROUP BY students.student_id
+ORDER BY average_grade DESC
+LIMIT 10;
+Use code with caution. Learn more
+These are just a few examples of SQL query code that you can use to manage a student database. 
